@@ -3,24 +3,26 @@ import Country from './Country';
 import Loading from './Loading';
 import { useGlobalContext } from '../context';
 
-function CountryList() {
+const CountryList = () => {
 
  const { countries, loading } = useGlobalContext(); 
 
   if(loading){
     return <Loading/>
   }
-  if(countries.length < 1) {
+  if(!countries.length) {
     return (
-      <h2 className="text-center text-base font-semibold tracking widest italic">
-        No countrie matched your search criteria.
-      </h2>
+      <div className="w-full h-screen text-white flex justify-center sm:my-40 text-base font-semibold tracking widest italic">
+        <span>Sorry!!!!!!!!!! </span> 
+        <span><i className="far fa-frown fa-4x px-4 animate-bounce"></i></span>
+        <span>no countrie matched your search criteria.</span>        
+      </div>
     )
   }
   return (
-    <section className="w-full h-full flex flex-col sm:flex-row sm:flex-wrap gap-10 items-center mt-6 justify-start sm:justify-center">
+    <section className="w-full h-full min-h-screen flex flex-col sm:flex-row sm:flex-wrap gap-10 items-center mt-2 justify-start sm:justify-center sm:items-start">
       {countries.map((item) => {
-        return <Country key={item.numericCode}{...item}/>
+        return <Country key={item.alpha3Code}{...item}/>
       })}            
     </section>
   )     

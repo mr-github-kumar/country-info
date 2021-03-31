@@ -45,14 +45,14 @@ const SingleCountry = () =>  {
             <div className="w-full h-full max-w-6xl flex flex-col">
                 <div className="back-button sm:h-1/5 flex justify-start items-center">
                     <Link to="/">
-                        <button className="h-10 w-24 bg-dark-2 text-white p-2 flex items-center justify-around rounded-sm shadow-md">
+                        <button className="h-10 w-24 bg-dark-2 text-white p-2 flex items-center justify-around rounded-sm shadow-md cursor-pointer">
                             <i className="fas fa-arrow-left"></i>
                             Back
                         </button>
                     </Link>
                 </div>
                 <div className="country w-full flex sm:flex-row sm:gap-12">
-                    <img src= {country.flag} alt={country.name} className="sm:w-1/2 m-0 shadow-lg"/>
+                    <img src= {country.flag} alt={country.name} className="sm:w-1/2 sm:h-96 m-0 shadow-lg"/>
                     <div className="country-disc w-full sm:w-1/2 text-white flex flex-col sm:justify-between sm:py-8">
                         <h2 className="name font-semibold text-3xl">{country.name}</h2>
                         <div className="main flex sm:flex-row w-full sm:justify-between">
