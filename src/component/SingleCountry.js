@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Loading from '../component/Loading';
 import { useParams, Link } from 'react-router-dom';
 import { useGlobalContext } from '../context';
+import NumberFormat from 'react-number-format';
 
 const url = 'https://restcountries.eu/rest/v2/alpha/';
 
@@ -58,7 +59,9 @@ const SingleCountry = () =>  {
                         <div className="main flex flex-col gap-y-4 sm:flex-row w-full sm:justify-between">
                             <div className="main-left w-full sm:w-1/2 flex flex-col sm:gap-2">
                                 <span><strong>Native Name:</strong> {country.nativeName}</span>
-                                <span><strong>Population:</strong> {country.population}</span>
+                                <span><strong>Population:</strong> 
+                                <NumberFormat className="px-2" value={country.population} displayType={'text'} thousandSeparator={true}/>
+                                </span>
                                 <span><strong>Region</strong>: {country.region}</span>
                                 <span><strong>Sub-region:</strong> {country.subregion}</span>
                                 <span><strong>Capital:</strong> {country.capital}</span>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NumberFormat from 'react-number-format';
 
 const Country = ({name, capital, region, population, flag, alpha3Code}) => {
     return (
@@ -8,7 +9,10 @@ const Country = ({name, capital, region, population, flag, alpha3Code}) => {
             <img src={flag} alt={name} className="rounded-md rounded-b-none w-full object-cover h-40"/>
             <div className="p-4 flex flex-col text-dark-2 dark:text-light gap-2 w-fulls">
               <span className="mb-2 font-bold text-lg truncate hover:text-2xl">{name}</span>
-              <span className="text-base"><strong>Population:</strong> {population}</span>
+              <span className="text-base">
+                  <strong>Population:</strong> 
+                  <NumberFormat className="px-2" value={population} displayType={'text'} thousandSeparator={true}/>
+                </span>
               <span className="text-base"><strong>Region:</strong> {region}</span>
               <span className="text-base"><strong>Capital:</strong> {capital}</span>
             </div>
