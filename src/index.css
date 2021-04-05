@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
 @tailwind base;
+
+#toggle:checked ~ label div div.light {
+  @apply hidden;
+}
+#toggle:checked ~ label div div.dark {
+  @apply flex;
+}
+
 @tailwind components;
 @tailwind utilities;
 
-body {
+body { 
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",

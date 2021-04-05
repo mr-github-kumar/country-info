@@ -10,34 +10,34 @@ const AppProvider = ({ children }) => {
     const [searchCountry, setSearchCountry] = useState('a');
     const [countries, setCountries] = useState([]);
     const [region, setRegion] = useState("Filter by region...");
-
-    const getCountry = async () => {
-        setLoading(true);
-        try {
-            if (region === "Filter by region..." || "All"){
-                const response = await fetch(`${url1}${searchCountry}`);
-                const data = await response.json();
-                setCountries(data);
-                setLoading(false);                 
-            } else {
-                const response = await fetch(`${url2}${region}`);
-                const data = await response.json();
-                setCountries(data);
-                setLoading(false);                  
-            }          
-        } 
-        catch (error) {
-            setLoading(false);
-        }
-    }
+    const [isActive, setActive] = useState(true);
       
     useEffect(() => {
+        const getCountry = async () => {
+            setLoading(true);
+            try {
+                if (region === "Filter by region..." || region === "All"){
+                    const response = await fetch(`${url1}${searchCountry}`);
+                    const data = await response.json();
+                    setCountries(data);
+                    setLoading(false);                 
+                } else {
+                    const response = await fetch(`${url2}${region}`);
+                    const data = await response.json();
+                    setCountries(data);
+                    setLoading(false);                  
+                }          
+            } 
+            catch (error) {
+                setLoading(false);
+            }
+        };
         getCountry();
     }, [searchCountry, region]); 
 
 
     return (
-        <AppContext.Provider value={{loading,countries,searchCountry,setSearchCountry,region,setRegion}}>
+        <AppContext.Provider value={{loading,countries,searchCountry,setSearchCountry,region,setRegion,isActive,setActive}}>
             {children}
         </AppContext.Provider>
     )

@@ -6,7 +6,7 @@ import Filter from './Filter';
 
 function Main() {
     return (
-        <main className="w-full h-full flex justify-center bg-dark-1">
+        <main className="relative top-20 w-full h-full flex justify-center bg-white dark:bg-dark-1">
             <div className="w-full h-full flex flex-col max-w-6xl">
                 <Filter/>
                 <CountryList/>            
