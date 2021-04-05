@@ -12,13 +12,13 @@ function Header({action}) {
               <input type="checkbox" id="toggle" className="hidden"/>
               <label for="toggle">
                 <div className="w-full cursor-pointer" onClick={action}>
-                  <div className="dark hidden duration-300 ease-in-out">
-                    <i class="fas fa-moon"></i> 
-                    <span className="text-sm px-2">Dark Mode</span>        
+                  <div className="group dark hidden duration-300 ease-in-out">
+                    <i className="group-hover:text-gray fas fa-moon"></i> 
+                    <span className="group-hover:text-gray text-sm px-2">Dark Mode</span>        
                   </div>
-                  <div className="light duration-300 ease-in-out">
-                    <i class="fas fa-sun"></i> 
-                    <span className="text-sm px-2">Light Mode</span>        
+                  <div className="group light duration-300 ease-in-out">
+                    <i className="group-hover:text-gray fas fa-sun"></i> 
+                    <span className="group-hover:text-gray text-sm px-2">Light Mode</span>        
                   </div>
                 </div>
               </label>
