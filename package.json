@@ -17,13 +17,13 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.0"
   },
-  "homepage":"https://mr-github-kumar.github.io/rest-countries-api",
+  "homepage": "https://mr-github-kumar.github.io/rest-countries-api",
   "scripts": {
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "deploy":"gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
