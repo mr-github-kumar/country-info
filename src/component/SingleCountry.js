@@ -45,7 +45,7 @@ const SingleCountry = () =>  {
         <main className="relative top-20 bg-white dark:bg-dark-1 w-full h-screen p-4 flex flex-col items-center sm:justify-start">
             <div className="w-full h-full max-w-6xl flex flex-col gap-y-4">
                 <div className="back-button sm:h-1/5 flex justify-start items-center">
-                    <Link to="/">
+                    <Link to="/country-info">
                         <button className="h-10 w-24 bg-light dark:bg-dark-2 text-dark-2 dark:text-light p-2 flex items-center justify-around rounded-sm shadow-md cursor-pointer hover:bg-gray-2 dark:hover:bg-gray-1">
                             <i className="fas fa-arrow-left"></i>
                             Back
