@@ -22,7 +22,7 @@ function App() {
           <Header action={changeTheme}/>
         </section>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/country-info">
             <section className="app-main">
               <Main/>
             </section>
